@@ -34,4 +34,12 @@ export class ProductsService {
       },
     });
   }
+
+  async getProductById(id: string) {
+    return await this.prisma.product.findUnique({
+      where: {
+        id,
+      },
+    });
+  }
 }
